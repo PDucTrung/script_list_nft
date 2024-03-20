@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@polkadot/api": "^10.10.1",
+    "@polkadot/api-contract": "^10.10.1",
+    "@polkadot/util": "^12.5.1",
+    "axios": "^1.6.3",
+    "buffer": "^6.0.3",
+    "dotenv": "^16.3.1",
+    "ipfs-http-client": "^53.0.1",
+    "nft.storage": "^7.1.1",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "list-token": "node multi_list.js",
+    "mint": "node multi_mint.js",
+    "multi_set_attr": "node multi_set_attr.js"
+  }
+}
