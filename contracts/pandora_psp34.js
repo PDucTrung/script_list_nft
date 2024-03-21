@@ -1,5 +1,5 @@
 const pandora_psp34 = {
-  CONTRACT_ADDRESS: "5Hk8pzDEJ86caZZTHcr9nEVbkAtPBBFgGUeaRW8nwQyL1Vjf",
+  CONTRACT_ADDRESS: "5H98jLSSw9VYxuxMDZvkjf5Zdgc1BZQSnnk44ziyei12PvqP",
   CONTRACT_ABI: {
     source: {
       hash: "0x5932c35d1602506d8df581a4b3e69c87be866310a569d3fcc7eacd72e1a4a661",

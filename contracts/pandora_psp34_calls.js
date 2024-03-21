@@ -150,6 +150,7 @@ const setMultipleAttributesNFT = async (collectionAddress, tokenID) => {
   });
 };
 
+const nftImgIpfs = process.env.NFT_IMAGE_IPFS;
 const createMetadataJson = async (tokenID) => {
   const metadataFolderPath = "./metadata";
   const jsonFileName = `${tokenID}.json`;
@@ -162,7 +163,7 @@ const createMetadataJson = async (tokenID) => {
   const jsonData = {
     name: `#${tokenID}`,
     description: "BETAZ ticket pandora mode",
-    image: `ipfs://bafybeif4nis2wtx2fwdp6g3vmbie55aro4qp6xley36xyadyi6islo2j6q/${tokenID}.png`,
+    image: `ipfs://${nftImgIpfs}/${tokenID}.png`,
     attributes: [],
   };
 

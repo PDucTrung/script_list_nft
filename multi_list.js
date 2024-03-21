@@ -131,16 +131,19 @@ const handle_list = async () => {
           }
         } else {
           console.log("Collection not active");
+          return;
         }
 
         console.log(`round ${i + 1}: finalized`);
       } catch (e) {
         console.log({ ERROR: e });
+        break;
       }
     }
     console.log(`COMPLETED!`);
   } catch (e) {
     console.error({ ERROR: e });
+    return;
   }
 };
 
