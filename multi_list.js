@@ -34,6 +34,7 @@ require("dotenv").config();
 
 const path = "data.xlsx";
 
+// get data excel
 const listArr = readXlsx(path);
 let list_arr = listArr.map((item) => {
   return {
@@ -43,7 +44,19 @@ let list_arr = listArr.map((item) => {
   };
 });
 
-console.log(list_arr);
+// no get data excel
+let total = 100;
+let price = 10;
+let list_arr_no_excel = Array.from({ length: total }).map((item) => {
+  let id = index + 1;
+  return {
+    psp34_contract_address: pandora_psp34.CONTRACT_ADDRESS,
+    token_id: id,
+    price: price,
+  };
+});
+
+console.log(list_arr, list_arr_no_excel);
 
 const PROVIDER = process.env.PROVIDER_URL;
 const provider = new WsProvider(PROVIDER);
