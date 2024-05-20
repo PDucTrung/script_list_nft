@@ -54,7 +54,7 @@ const handle_mint = async (mint_amounts, amounts_in_round) => {
       for (let i = 0; i < total_round; i++) {
         try {
           console.log(`round: ${i + 1} mint ${amounts_in_round} tickets`);
-          await multipleMintTicket(amounts_in_round);
+          await multipleMintTicket(is_owner, amounts_in_round);
           console.log(`round: ${i + 1} finalized`);
         } catch (e) {
           console.log(`ERROR: ${e.messages}`);
