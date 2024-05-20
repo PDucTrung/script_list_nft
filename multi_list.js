@@ -47,7 +47,7 @@ let list_arr = listArr.map((item) => {
 // no get data excel
 let total = 100;
 let price = 10;
-let list_arr_no_excel = Array.from({ length: total }).map((item) => {
+let list_arr_no_excel = Array.from({ length: total }).map((item, index) => {
   let id = index + 1;
   return {
     psp34_contract_address: pandora_psp34.CONTRACT_ADDRESS,
@@ -55,6 +55,8 @@ let list_arr_no_excel = Array.from({ length: total }).map((item) => {
     price: price,
   };
 });
+
+list_arr = [...list_arr_no_excel];
 
 console.log(list_arr, list_arr_no_excel);
 
@@ -136,7 +138,8 @@ const handle_list = async () => {
               if (!listed) {
                 console.log("can't list toke");
               } else {
-                await createMetadataJson(list_arr[i].token_id);
+                console.log(`List token ${list_arr[i].token_id} successfully`);
+                // await createMetadataJson(list_arr[i].token_id);
               }
             } else {
               console.log("can't approve");
