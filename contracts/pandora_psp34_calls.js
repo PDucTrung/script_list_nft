@@ -32,7 +32,7 @@ const setPandoraNftAbiContract = (data) => {
   abi_contract = new Abi(data.CONTRACT_ABI);
 };
 
-const multipleMintTicket = async (amounts) => {
+const multipleMintTicket = async (address, amounts) => {
   let gasLimit;
   const value = 0;
 
@@ -45,11 +45,14 @@ const multipleMintTicket = async (amounts) => {
     contract,
     value,
     "multipleMintTicket",
+    address,
     { u64: amounts }
   );
 
   return new Promise((resolve, reject) => {
-    contract.tx["multipleMintTicket"]({ gasLimit, value }, { u64: amounts })
+    contract.tx["multipleMintTicket"]({ gasLimit, value }, address, {
+      u64: amounts,
+    })
       .signAndSend(keypair, async ({ status, dispatchError }) => {
         if (dispatchError) {
           if (dispatchError.isModule) {

@@ -10,8 +10,8 @@ const {
 const socket = process.env.PROVIDER_URL;
 const provider = new WsProvider(socket);
 const api = new ApiPromise({ provider, rpc: jsonrpc });
-const mint_amounts = 5;
-const amounts_in_round = 5;
+const mint_amounts = 100;
+const amounts_in_round = 50;
 
 require("dotenv").config();
 
@@ -54,7 +54,7 @@ const handle_mint = async (mint_amounts, amounts_in_round) => {
       for (let i = 0; i < total_round; i++) {
         try {
           console.log(`round: ${i + 1} mint ${amounts_in_round} tickets`);
-          await multipleMintTicket(is_owner, amounts_in_round);
+          await multipleMintTicket(keypair.address, amounts_in_round);
           console.log(`round: ${i + 1} finalized`);
         } catch (e) {
           console.log(`ERROR: ${e.messages}`);
